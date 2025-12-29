@@ -1,0 +1,631 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>AI App Store | San Bernardino County</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet" />
+</head>
+
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">
+      <img src="CAO_White-Alternative-logo.png" alt="San Bernardino County" class="county-logo" />
+      <strong class="brand-title">AI App Store</strong>
+    </div>
+
+    <nav class="nav">
+      <a href="https://main.sbcounty.gov/">Home</a>
+      <a href="index.html" class="active">AI Agents</a>
+      <a href="training.html">Training</a>
+      <a href="submit.html">Submit an Agent</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+  <header class="hero">
+    <h1>AI Agents for County Staff</h1>
+    <p>Browse agents by category. Open an agent to learn how to use it.</p>
+  </header>
+
+  <section class="store-layout">
+    <section class="stack-col">
+      <section class="group">
+        <h2 class="group-title">Administration</h2>
+
+        <a class="app-card" href="#agent-bai-assist">
+          <span class="app-icon"><i class="bi bi-chat-square-dots"></i></span>
+          <span class="app-text">
+            <span class="app-name">BAI Assist</span>
+            <span class="app-desc">Drafts summaries, emails, and internal communications for admin workflows.</span>
+          </span>
+        </a>
+
+        <a class="app-card" href="#agent-procurement">
+          <span class="app-icon"><i class="bi bi-bag-check"></i></span>
+          <span class="app-text">
+            <span class="app-name">Procurement Agent</span>
+            <span class="app-desc">Supports purchasing workflows, RFQs/RFPs, and vendor communications.</span>
+          </span>
+        </a>
+
+        <a class="app-card" href="#agent-hr">
+          <span class="app-icon"><i class="bi bi-people"></i></span>
+          <span class="app-text">
+            <span class="app-name">Human Resources Agent</span>
+            <span class="app-desc">Helps with HR guidance, onboarding checklists, and employee communications.</span>
+          </span>
+        </a>
+      </section>
+
+      <section class="group">
+        <h2 class="group-title">Guidance</h2>
+
+        <a class="app-card" href="#agent-financial-planner">
+          <span class="app-icon"><i class="bi bi-cash-coin"></i></span>
+          <span class="app-text">
+            <span class="app-name">Financial Planner</span>
+            <span class="app-desc">Builds budget narratives, forecasts, and clear summaries for decision-making.</span>
+          </span>
+        </a>
+      </section>
+    </section>
+
+    <section class="group">
+      <h2 class="group-title">Operations</h2>
+
+      <a class="app-card" href="#agent-federal-grants">
+        <span class="app-icon"><i class="bi bi-award"></i></span>
+        <span class="app-text">
+          <span class="app-name">Federal Grants Agent</span>
+          <span class="app-desc">Assists with eligibility checks, narrative drafting, and compliance reminders.</span>
+        </span>
+      </a>
+
+      <a class="app-card" href="#agent-service-triage">
+        <span class="app-icon"><i class="bi bi-inboxes"></i></span>
+        <span class="app-text">
+          <span class="app-name">Service Request Triage</span>
+          <span class="app-desc">Categorizes requests, suggests priority, and recommends next steps.</span>
+        </span>
+      </a>
+
+      <a class="app-card" href="#agent-workorder-scheduling">
+        <span class="app-icon"><i class="bi bi-calendar-check"></i></span>
+        <span class="app-text">
+          <span class="app-name">Work Order &amp; Scheduling Assistant</span>
+          <span class="app-desc">Organizes work orders into a weekly plan with timing and status updates.</span>
+        </span>
+      </a>
+    </section>
+
+    <aside class="training-panel">
+      <h2 class="training-title">Learn How to Use County AI Tools</h2>
+
+      <a class="video-card" href="#video-welcome">
+        <span class="video-icon"><i class="bi bi-play-circle"></i></span>
+        <span class="video-name">Welcome to the AI App Store</span>
+        <span class="video-time">2:30</span>
+      </a>
+
+      <a class="video-card" href="#video-bai">
+        <span class="video-icon"><i class="bi bi-lightbulb"></i></span>
+        <span class="video-name">How to use BAI Assist</span>
+        <span class="video-time">4:45</span>
+      </a>
+
+      <a class="video-card" href="#video-procurement">
+        <span class="video-icon"><i class="bi bi-bag-check"></i></span>
+        <span class="video-name">Procurement Agent basics</span>
+        <span class="video-time">3:20</span>
+      </a>
+
+      <a class="video-card" href="#video-grants">
+        <span class="video-icon"><i class="bi bi-award"></i></span>
+        <span class="video-name">Federal grants workflow overview</span>
+        <span class="video-time">4:10</span>
+      </a>
+
+      <a class="video-card" href="#video-privacy">
+        <span class="video-icon"><i class="bi bi-shield-lock"></i></span>
+        <span class="video-name">Data privacy for county AI</span>
+        <span class="video-time">3:40</span>
+      </a>
+    </aside>
+  </section>
+</main>
+
+<div id="close" class="target-close"></div>
+
+<section id="agent-bai-assist" class="drawer-css" aria-labelledby="bai-title">
+  <a class="drawer-overlay-css" href="#close" aria-label="Close"></a>
+  <aside class="drawer-panel">
+    <header class="drawer-header">
+      <div class="drawer-titlewrap">
+        <span class="drawer-badge"><i class="bi bi-chat-square-dots"></i></span>
+        <div>
+          <h2 class="drawer-title" id="bai-title">BAI Assist</h2>
+          <p class="drawer-summary">Drafts summaries, emails, and internal communications for admin workflows.</p>
+        </div>
+      </div>
+      <a class="drawer-close" href="#close" aria-label="Close"><i class="bi bi-x-lg"></i></a>
+    </header>
+
+    <div class="drawer-body">
+      <div class="drawer-section">
+        <h3>Best for</h3>
+        <p>Emails, memos, meeting summaries, and short leadership-ready updates.</p>
+      </div>
+
+      <div class="drawer-section">
+        <h3>How to use</h3>
+        <ol>
+          <li>Paste your notes or the email thread.</li>
+          <li>Ask for a summary + draft response.</li>
+          <li>Specify tone (formal/neutral) and length.</li>
+          <li>Review for accuracy and remove sensitive info.</li>
+        </ol>
+      </div>
+
+      <div class="drawer-section">
+        <h3>Example prompts</h3>
+        <ul>
+          <li>“Turn these bullets into a 1-page memo for leadership.”</li>
+          <li>“Draft a reply acknowledging receipt and next steps.”</li>
+          <li>“Rewrite this to be clearer and shorter.”</li>
+        </ul>
+      </div>
+
+      <div class="drawer-actions">
+        <a class="btn btn-primary" href="https://chatgpt.com/g/g-6952c8ea770c8191ae8f3edb61b9d99e-bai-assist" target="_blank" rel="noopener noreferrer">
+          <i class="bi bi-box-arrow-up-right"></i> Open AI Agent
+        </a>
+        <a class="btn btn-ghost" href="#close"><i class="bi bi-x-circle"></i> Close</a>
+      </div>
+
+      <p class="drawer-footnote">Mockup: content is for demonstration purposes only.</p>
+    </div>
+  </aside>
+</section>
+
+<section id="agent-procurement" class="drawer-css" aria-labelledby="proc-title">
+  <a class="drawer-overlay-css" href="#close" aria-label="Close"></a>
+  <aside class="drawer-panel">
+    <header class="drawer-header">
+      <div class="drawer-titlewrap">
+        <span class="drawer-badge"><i class="bi bi-bag-check"></i></span>
+        <div>
+          <h2 class="drawer-title" id="proc-title">Procurement Agent</h2>
+          <p class="drawer-summary">Supports purchasing workflows, RFQs/RFPs, and vendor communications.</p>
+        </div>
+      </div>
+      <a class="drawer-close" href="#close" aria-label="Close"><i class="bi bi-x-lg"></i></a>
+    </header>
+
+    <div class="drawer-body">
+      <div class="drawer-section">
+        <h3>Best for</h3>
+        <p>Drafting RFQ/RFP sections, vendor email templates, and compliant language outlines.</p>
+      </div>
+
+      <div class="drawer-section">
+        <h3>How to use</h3>
+        <ol>
+          <li>Describe what you’re buying and the scope.</li>
+          <li>Ask for required sections and evaluation criteria.</li>
+          <li>Request vendor Q&amp;A templates and communication drafts.</li>
+          <li>Route final language through procurement/legal review.</li>
+        </ol>
+      </div>
+
+      <div class="drawer-actions">
+        <a class="btn btn-primary" href="https://chatgpt.com/g/g-6952cda16aa081919cf25ba11bcaabf4-procurement-agent" target="_blank" rel="noopener noreferrer">
+          <i class="bi bi-box-arrow-up-right"></i> Open AI Agent
+        </a>
+        <a class="btn btn-ghost" href="#close"><i class="bi bi-x-circle"></i> Close</a>
+      </div>
+
+      <p class="drawer-footnote">Mockup: content is for demonstration purposes only.</p>
+    </div>
+  </aside>
+</section>
+
+<section id="agent-hr" class="drawer-css" aria-labelledby="hr-title">
+  <a class="drawer-overlay-css" href="#close" aria-label="Close"></a>
+  <aside class="drawer-panel">
+    <header class="drawer-header">
+      <div class="drawer-titlewrap">
+        <span class="drawer-badge"><i class="bi bi-people"></i></span>
+        <div>
+          <h2 class="drawer-title" id="hr-title">Human Resources Agent</h2>
+          <p class="drawer-summary">Helps with HR guidance, onboarding checklists, and employee communications.</p>
+        </div>
+      </div>
+      <a class="drawer-close" href="#close" aria-label="Close"><i class="bi bi-x-lg"></i></a>
+    </header>
+
+    <div class="drawer-body">
+      <div class="drawer-section">
+        <h3>Status</h3>
+        <p><strong>Pending approval:</strong> This agent is not available yet and will be posted to the County once approved.</p>
+      </div>
+
+      <div class="drawer-section">
+        <h3>Planned use cases</h3>
+        <ul>
+          <li>Onboarding checklists and internal guidance drafts</li>
+          <li>Employee communication templates</li>
+          <li>Policy Q&amp;A for non-confidential scenarios</li>
+        </ul>
+      </div>
+
+      <div class="drawer-actions">
+        <a class="btn btn-primary" href="https://chatgpt.com/g/g-6952ce07a1a081919e720ca6248d06de-human-resources-agent" target="_blank" rel="noopener noreferrer">
+          <i class="bi bi-box-arrow-up-right"></i> Open AI Agent
+        </a>
+        <a class="btn btn-ghost" href="#close"><i class="bi bi-x-circle"></i> Close</a>
+      </div>
+
+      <p class="drawer-footnote">Mockup: content is for demonstration purposes only.</p>
+    </div>
+  </aside>
+</section>
+
+<section id="agent-financial-planner" class="drawer-css" aria-labelledby="fp-title">
+  <a class="drawer-overlay-css" href="#close" aria-label="Close"></a>
+  <aside class="drawer-panel">
+    <header class="drawer-header">
+      <div class="drawer-titlewrap">
+        <span class="drawer-badge"><i class="bi bi-cash-coin"></i></span>
+        <div>
+          <h2 class="drawer-title" id="fp-title">Financial Planner</h2>
+          <p class="drawer-summary">Builds budget narratives, forecasts, and clear summaries for decision-making.</p>
+        </div>
+      </div>
+      <a class="drawer-close" href="#close" aria-label="Close"><i class="bi bi-x-lg"></i></a>
+    </header>
+
+    <div class="drawer-body">
+      <div class="drawer-section">
+        <h3>Best for</h3>
+        <p>Budget forecasts, variance explanations, and leadership-ready summaries with next actions.</p>
+      </div>
+
+      <div class="drawer-section">
+        <h3>Example prompts</h3>
+        <ul>
+          <li>“Summarize these budget vs actuals and give 5 talking points.”</li>
+          <li>“Draft a 1-page budget narrative for a monthly check-in.”</li>
+          <li>“Create a short forecast based on these assumptions.”</li>
+        </ul>
+      </div>
+
+      <div class="drawer-actions">
+        <a class="btn btn-primary" href="https://chatgpt.com/g/g-6952ce7342c88191808902b3e3c1932e-financial-planner" target="_blank" rel="noopener noreferrer">
+          <i class="bi bi-box-arrow-up-right"></i> Open AI Agent
+        </a>
+        <a class="btn btn-ghost" href="#close"><i class="bi bi-x-circle"></i> Close</a>
+      </div>
+
+      <p class="drawer-footnote">Mockup: content is for demonstration purposes only.</p>
+    </div>
+  </aside>
+</section>
+
+<section id="agent-federal-grants" class="drawer-css" aria-labelledby="fg-title">
+  <a class="drawer-overlay-css" href="#close" aria-label="Close"></a>
+  <aside class="drawer-panel">
+    <header class="drawer-header">
+      <div class="drawer-titlewrap">
+        <span class="drawer-badge"><i class="bi bi-award"></i></span>
+        <div>
+          <h2 class="drawer-title" id="fg-title">Federal Grants Agent</h2>
+          <p class="drawer-summary">Assists with eligibility checks, narrative drafting, and compliance reminders.</p>
+        </div>
+      </div>
+      <a class="drawer-close" href="#close" aria-label="Close"><i class="bi bi-x-lg"></i></a>
+    </header>
+
+    <div class="drawer-body">
+      <div class="drawer-section">
+        <h3>Best for</h3>
+        <p>Drafting grant narratives, summarizing requirements, and building compliance checklists.</p>
+      </div>
+
+      <div class="drawer-section">
+        <h3>Example prompts</h3>
+        <ul>
+          <li>“Summarize eligibility and key deadlines from this NOFO excerpt.”</li>
+          <li>“Draft a 1-page project narrative from these bullets.”</li>
+          <li>“Create a compliance checklist for the application package.”</li>
+        </ul>
+      </div>
+
+      <div class="drawer-actions">
+        <a class="btn btn-primary" href="https://chatgpt.com/g/g-6952cec9a518819187230e0f44d58f11-federal-grants-agent" target="_blank" rel="noopener noreferrer">
+          <i class="bi bi-box-arrow-up-right"></i> Open AI Agent
+        </a>
+        <a class="btn btn-ghost" href="#close"><i class="bi bi-x-circle"></i> Close</a>
+      </div>
+
+      <p class="drawer-footnote">Mockup: content is for demonstration purposes only.</p>
+    </div>
+  </aside>
+</section>
+
+<section id="agent-service-triage" class="drawer-css" aria-labelledby="st-title">
+  <a class="drawer-overlay-css" href="#close" aria-label="Close"></a>
+  <aside class="drawer-panel">
+    <header class="drawer-header">
+      <div class="drawer-titlewrap">
+        <span class="drawer-badge"><i class="bi bi-inboxes"></i></span>
+        <div>
+          <h2 class="drawer-title" id="st-title">Service Request Triage</h2>
+          <p class="drawer-summary">Categorizes requests, suggests priority, and recommends next steps.</p>
+        </div>
+      </div>
+      <a class="drawer-close" href="#close" aria-label="Close"><i class="bi bi-x-lg"></i></a>
+    </header>
+
+    <div class="drawer-body">
+      <div class="drawer-section">
+        <h3>Best for</h3>
+        <p>Intake emails/forms, categorizing workload, and drafting clear response templates.</p>
+      </div>
+
+      <div class="drawer-section">
+        <h3>How to use</h3>
+        <ol>
+          <li>Paste the request text (remove sensitive details).</li>
+          <li>Ask: “Categorize, set priority, and propose next steps.”</li>
+          <li>Request a short response draft for the requester.</li>
+        </ol>
+      </div>
+
+      <div class="drawer-actions">
+        <a class="btn btn-primary" href="#" target="_blank" rel="noopener noreferrer">
+          <i class="bi bi-box-arrow-up-right"></i> Open AI Agent
+        </a>
+        <a class="btn btn-ghost" href="#close"><i class="bi bi-x-circle"></i> Close</a>
+      </div>
+
+      <p class="drawer-footnote">Mockup: content is for demonstration purposes only.</p>
+    </div>
+  </aside>
+</section>
+
+<section id="agent-workorder-scheduling" class="drawer-css" aria-labelledby="wo-title">
+  <a class="drawer-overlay-css" href="#close" aria-label="Close"></a>
+  <aside class="drawer-panel">
+    <header class="drawer-header">
+      <div class="drawer-titlewrap">
+        <span class="drawer-badge"><i class="bi bi-calendar-check"></i></span>
+        <div>
+          <h2 class="drawer-title" id="wo-title">Work Order &amp; Scheduling Assistant</h2>
+          <p class="drawer-summary">Organizes work orders into a weekly plan with timing and status updates.</p>
+        </div>
+      </div>
+      <a class="drawer-close" href="#close" aria-label="Close"><i class="bi bi-x-lg"></i></a>
+    </header>
+
+    <div class="drawer-body">
+      <div class="drawer-section">
+        <h3>Best for</h3>
+        <p>Weekly planning, shift coverage notes, status updates, and simple timeline sequencing.</p>
+      </div>
+
+      <div class="drawer-section">
+        <h3>Example prompts</h3>
+        <ul>
+          <li>“Turn these work orders into a 5-day plan with priorities and owners.”</li>
+          <li>“Draft a short status update for leadership from these notes.”</li>
+          <li>“Identify schedule conflicts and propose alternatives.”</li>
+        </ul>
+      </div>
+
+      <div class="drawer-actions">
+        <a class="btn btn-primary" href="#" target="_blank" rel="noopener noreferrer">
+          <i class="bi bi-box-arrow-up-right"></i> Open AI Agent
+        </a>
+        <a class="btn btn-ghost" href="#close"><i class="bi bi-x-circle"></i> Close</a>
+      </div>
+
+      <p class="drawer-footnote">Mockup: content is for demonstration purposes only.</p>
+    </div>
+  </aside>
+</section>
+
+<section id="video-welcome" class="drawer-css" aria-labelledby="vw-title">
+  <a class="drawer-overlay-css" href="#close" aria-label="Close"></a>
+  <aside class="drawer-panel">
+    <header class="drawer-header">
+      <div class="drawer-titlewrap">
+        <span class="drawer-badge"><i class="bi bi-play-circle"></i></span>
+        <div>
+          <h2 class="drawer-title" id="vw-title">Welcome to the AI App Store</h2>
+          <p class="drawer-summary">A quick overview of what this hub is, how to get value fast, and how to use tools safely.</p>
+        </div>
+      </div>
+      <a class="drawer-close" href="#close" aria-label="Close"><i class="bi bi-x-lg"></i></a>
+    </header>
+
+    <div class="drawer-body">
+      <div class="drawer-section">
+        <h3>Who should watch</h3>
+        <p>All County staff (recommended first video).</p>
+      </div>
+
+      <div class="drawer-section">
+        <h3>What you’ll learn</h3>
+        <ul>
+          <li>How agents are organized by category.</li>
+          <li>What types of work AI can accelerate.</li>
+          <li>Basic safety and review best practices.</li>
+        </ul>
+      </div>
+
+      <div class="drawer-actions">
+      <a class="btn btn-primary" href="https://www.youtube.com/@SBCountyPIO" target="_blank" rel="noopener noreferrer">
+       <i class="bi bi-play-circle"></i> Watch
+          </a>
+
+        <a class="btn btn-ghost" href="#close"><i class="bi bi-x-circle"></i> Close</a>
+      </div>
+
+      <p class="drawer-footnote">Mockup: content is for demonstration purposes only.</p>
+    </div>
+  </aside>
+</section>
+
+<section id="video-bai" class="drawer-css" aria-labelledby="vb-title">
+  <a class="drawer-overlay-css" href="#close" aria-label="Close"></a>
+  <aside class="drawer-panel">
+    <header class="drawer-header">
+      <div class="drawer-titlewrap">
+        <span class="drawer-badge"><i class="bi bi-lightbulb"></i></span>
+        <div>
+          <h2 class="drawer-title" id="vb-title">How to use BAI Assist</h2>
+          <p class="drawer-summary">Learn simple prompts that produce clean summaries, memos, and email drafts.</p>
+        </div>
+      </div>
+      <a class="drawer-close" href="#close" aria-label="Close"><i class="bi bi-x-lg"></i></a>
+    </header>
+
+    <div class="drawer-body">
+      <div class="drawer-section">
+        <h3>Best for</h3>
+        <p>Emails, memos, meeting notes, and short responses.</p>
+      </div>
+
+      <div class="drawer-section">
+        <h3>Key tips</h3>
+        <ol>
+          <li>Paste the source text (notes or email thread).</li>
+          <li>Ask for a 3-bullet summary + draft.</li>
+          <li>Choose tone: formal / neutral.</li>
+          <li>Review accuracy and remove sensitive info.</li>
+        </ol>
+      </div>
+
+      <div class="drawer-actions">
+        <a class="btn btn-primary" href="https://www.youtube.com/@SBCountyPIO" target="_blank" rel="noopener noreferrer">
+        <i class="bi bi-play-circle"></i> Watch
+          </a>
+
+        <a class="btn btn-ghost" href="#close"><i class="bi bi-x-circle"></i> Close</a>
+      </div>
+
+      <p class="drawer-footnote">Mockup: content is for demonstration purposes only.</p>
+    </div>
+  </aside>
+</section>
+
+<section id="video-procurement" class="drawer-css" aria-labelledby="vp2-title">
+  <a class="drawer-overlay-css" href="#close" aria-label="Close"></a>
+  <aside class="drawer-panel">
+    <header class="drawer-header">
+      <div class="drawer-titlewrap">
+        <span class="drawer-badge"><i class="bi bi-bag-check"></i></span>
+        <div>
+          <h2 class="drawer-title" id="vp2-title">Procurement Agent basics</h2>
+          <p class="drawer-summary">How to use templates, outlines, and compliant language to speed up procurement tasks.</p>
+        </div>
+      </div>
+      <a class="drawer-close" href="#close" aria-label="Close"><i class="bi bi-x-lg"></i></a>
+    </header>
+
+    <div class="drawer-body">
+      <div class="drawer-section">
+        <h3>Best for</h3>
+        <p>RFP outlines, evaluation criteria drafts, and vendor communication templates.</p>
+      </div>
+
+      <div class="drawer-actions">
+        <a class="btn btn-primary" href="https://www.youtube.com/@SBCountyPIO" target="_blank" rel="noopener noreferrer">
+          <i class="bi bi-play-circle"></i> Watch
+        </a>
+
+        <a class="btn btn-ghost" href="#close"><i class="bi bi-x-circle"></i> Close</a>
+      </div>
+
+      <p class="drawer-footnote">Mockup: content is for demonstration purposes only.</p>
+    </div>
+  </aside>
+</section>
+
+<section id="video-grants" class="drawer-css" aria-labelledby="vg-title">
+  <a class="drawer-overlay-css" href="#close" aria-label="Close"></a>
+  <aside class="drawer-panel">
+    <header class="drawer-header">
+      <div class="drawer-titlewrap">
+        <span class="drawer-badge"><i class="bi bi-award"></i></span>
+        <div>
+          <h2 class="drawer-title" id="vg-title">Federal grants workflow overview</h2>
+          <p class="drawer-summary">A walkthrough of how to draft narratives, track requirements, and stay compliant.</p>
+        </div>
+      </div>
+      <a class="drawer-close" href="#close" aria-label="Close"><i class="bi bi-x-lg"></i></a>
+    </header>
+
+    <div class="drawer-body">
+      <div class="drawer-section">
+        <h3>Best for</h3>
+        <p>Grant discovery summaries, eligibility checks, and application checklist building.</p>
+      </div>
+
+      <div class="drawer-actions">
+                <a class="btn btn-primary" href="https://www.youtube.com/@SBCountyPIO" target="_blank" rel="noopener noreferrer">
+            <i class="bi bi-play-circle"></i> Watch
+          </a>
+
+        <a class="btn btn-ghost" href="#close"><i class="bi bi-x-circle"></i> Close</a>
+      </div>
+
+      <p class="drawer-footnote">Mockup: content is for demonstration purposes only.</p>
+    </div>
+  </aside>
+</section>
+
+<section id="video-privacy" class="drawer-css" aria-labelledby="vpr-title">
+  <a class="drawer-overlay-css" href="#close" aria-label="Close"></a>
+  <aside class="drawer-panel">
+    <header class="drawer-header">
+      <div class="drawer-titlewrap">
+        <span class="drawer-badge"><i class="bi bi-shield-lock"></i></span>
+        <div>
+          <h2 class="drawer-title" id="vpr-title">Data privacy for county AI</h2>
+          <p class="drawer-summary">What data is allowed, what is not allowed, and how to protect the County and residents.</p>
+        </div>
+      </div>
+      <a class="drawer-close" href="#close" aria-label="Close"><i class="bi bi-x-lg"></i></a>
+    </header>
+
+    <div class="drawer-body">
+      <div class="drawer-section">
+        <h3>Key rules</h3>
+        <ul>
+          <li>Do not paste confidential or sensitive resident data.</li>
+          <li>Use summaries instead of full records when possible.</li>
+          <li>Always verify outputs before sending or publishing.</li>
+        </ul>
+      </div>
+
+      <div class="drawer-actions">
+        <a class="btn btn-primary" href="https://www.youtube.com/@SBCountyPIO" target="_blank" rel="noopener noreferrer">
+          <i class="bi bi-play-circle"></i> Watch
+        </a>
+
+        <a class="btn btn-ghost" href="#close"><i class="bi bi-x-circle"></i> Close</a>
+      </div>
+
+      <p class="drawer-footnote">Mockup: content is for demonstration purposes only.</p>
+    </div>
+  </aside>
+</section>
+
+
+</body>
+</html>

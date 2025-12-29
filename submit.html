@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Submit an AI Agent | San Bernardino County</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Bootstrap Icons -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    rel="stylesheet"
+  />
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+
+      <div class="brand">
+        <img
+         src="CAO_White-Alternative-logo.png"
+          alt="San Bernardino County"
+          class="county-logo"
+        />
+        <strong class="brand-title">AI App Store</strong>
+      </div>
+
+      <nav class="nav">
+        <a href="https://main.sbcounty.gov/">Home</a>
+        <a href="index.html">AI Agents</a>
+        <a href="training.html">Training</a>
+        <a href="submit.html" class="active">Submit an Agent</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="page">
+    <header class="hero">
+      <h1>Submit an AI Agent</h1>
+      <p>Propose your idea, partner with ITD, and ship a County-ready AI Agent with privacy, security, and usability review.</p>
+    </header>
+
+    <section class="submit-layout-simple">
+
+      <!-- LEFT -->
+      <section class="submit-left">
+
+        <section class="program-card">
+          <div class="program-icon">
+            <i class="bi bi-stars"></i>
+          </div>
+
+          <div class="program-body">
+            <h2>Want to submit your own AI Agent?</h2>
+            <p>
+              Create an agent that helps your team work smarter. We pair your subject-matter expertise with a County
+              developer and an ITD reviewer. Once approved, your idea can ship in the County AI App Store.
+            </p>
+
+            <div class="program-actions">
+              <a class="btn btn-primary" href="#" data-modal-open="creatorGuideModal">
+                <i class="bi bi-journal-text"></i>
+                Read the creator guide
+              </a>
+              <a class="btn btn-ghost" href="#" data-modal-open="exampleSubmissionsModal">
+                <i class="bi bi-files"></i>
+                View example submissions
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section class="steps-row">
+          <article class="step-card-simple">
+            <div class="step-head">
+              <div class="step-badge"><i class="bi bi-lightbulb"></i></div>
+              <div>
+                <div class="step-kicker">Step 1</div>
+                <h3>Submit your idea</h3>
+              </div>
+            </div>
+            <ul>
+              <li>Describe the problem and who it helps.</li>
+              <li>List your top 3 tasks the agent should handle.</li>
+              <li>Add sample prompts and expected outputs.</li>
+            </ul>
+          </article>
+
+          <article class="step-card-simple">
+            <div class="step-head">
+              <div class="step-badge"><i class="bi bi-people"></i></div>
+              <div>
+                <div class="step-kicker">Step 2</div>
+                <h3>Collaborate with ITD</h3>
+              </div>
+            </div>
+            <ul>
+              <li>Align requirements and scope.</li>
+              <li>Confirm data sources and guardrails.</li>
+              <li>Test prompts and refine usability.</li>
+            </ul>
+          </article>
+
+          <article class="step-card-simple">
+            <div class="step-head">
+              <div class="step-badge"><i class="bi bi-shield-check"></i></div>
+              <div>
+                <div class="step-kicker">Step 3</div>
+                <h3>Quality review &amp; approval</h3>
+              </div>
+            </div>
+            <ul>
+              <li>Privacy and security checks.</li>
+              <li>Accuracy and usability validation.</li>
+              <li>Approval to publish in the App Store.</li>
+            </ul>
+          </article>
+        </section>
+
+        <p class="submit-footnote">
+          <i class="bi bi-info-circle"></i>
+          AI agents are reviewed to support County work while maintaining privacy, security, and compliance.
+        </p>
+
+      </section>
+
+      <!-- RIGHT (now smaller + compact fields) -->
+      <aside class="submit-right">
+        <section class="side-card">
+          <h2 class="side-title"><i class="bi bi-send"></i> Submit your AI Agent idea</h2>
+
+          <form class="form form-wide form-compact">
+            <div class="form-row">
+              <input placeholder="Name" />
+              <input placeholder="Department" />
+            </div>
+
+            <div class="form-row">
+              <input placeholder="Role (optional)" />
+              <input placeholder="Email" />
+            </div>
+
+            <input placeholder="Agent title" />
+
+            <textarea placeholder="Agent purpose summary (1–2 sentences)"></textarea>
+            <textarea placeholder="Problem and users (who benefits, when used)"></textarea>
+            <textarea placeholder="Top three tasks (bullet list)"></textarea>
+            <textarea placeholder="Sample prompts (2–3 examples)"></textarea>
+
+            <div class="form-row">
+             <select required>
+                <option value="" selected disabled hidden>Data sensitivity</option>
+                <option value="Public">Public</option>
+                <option value="Internal">Internal</option>
+               <option value="Confidential">Confidential</option>
+              </select>
+
+
+              <select required>
+                <option value="" selected disabled hidden>Intended audience</option>
+                <option value="All staff">All staff</option>
+                <option value="Department staff">Department staff</option>
+                <option value="Managers / leadership">Managers / leadership</option>
+                <option value="Specialized users">Specialized users</option>
+              </select>
+
+            </div>
+
+            <button type="button">Submit (Mock)</button>
+
+            <p class="form-note">
+              Mockup: submissions would route to ITD for review and follow-up.
+            </p>
+          </form>
+        </section>
+      </aside>
+
+    </section>
+  </main>
+
+  <!-- =======================
+       MODALS (Preview content)
+       ======================= -->
+
+  <!-- Creator Guide Modal -->
+  <div id="creatorGuideModal" class="modal-overlay" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="creatorGuideTitle">
+      <div class="modal-header">
+        <h2 id="creatorGuideTitle"><i class="bi bi-journal-text"></i> Creator Guide (Preview)</h2>
+        <button class="modal-close" type="button" data-modal-close aria-label="Close">×</button>
+      </div>
+
+      <div class="modal-body">
+        <div class="modal-section">
+          <h3>Purpose</h3>
+          <p>
+            This guide helps County staff propose AI agents that are useful, safe, and ready for ITD review.
+            Agents should support staff work—not replace policy decisions or professional judgment.
+          </p>
+        </div>
+
+        <div class="modal-section">
+          <h3>Before you submit</h3>
+          <ul>
+            <li>Define one clear task the agent will support (keep scope narrow).</li>
+            <li>Confirm what data would be used and whether it is Public, Internal, or Confidential.</li>
+            <li>Design outputs so a person can review and edit before sharing or finalizing.</li>
+          </ul>
+        </div>
+
+        <div class="modal-section">
+          <h3>Appropriate examples</h3>
+          <ul>
+            <li>Drafting summaries, memos, and email templates from user-provided notes.</li>
+            <li>Turning bullet points into a structured report format.</li>
+            <li>Explaining existing County processes using approved references.</li>
+          </ul>
+        </div>
+
+        <div class="modal-section">
+          <h3>Not appropriate</h3>
+          <ul>
+            <li>Automated decision-making (e.g., eligibility, enforcement, approvals).</li>
+            <li>Resident-facing responses without human review.</li>
+            <li>Uploading or pasting sensitive/confidential information into tools that are not approved for it.</li>
+          </ul>
+        </div>
+
+        <div class="modal-section">
+          <h3>What ITD reviews</h3>
+          <ul>
+            <li>Data sources, sensitivity, and guardrails</li>
+            <li>Accuracy and usability validation</li>
+            <li>Privacy, security, and compliance alignment</li>
+          </ul>
+        </div>
+
+        <p class="modal-footnote">
+          <i class="bi bi-info-circle"></i>
+          Preview content for mockup/demo. Final guidance would be published and maintained by ITD.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Example Submissions Modal -->
+  <div id="exampleSubmissionsModal" class="modal-overlay" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="exampleSubmissionsTitle">
+      <div class="modal-header">
+        <h2 id="exampleSubmissionsTitle"><i class="bi bi-files"></i> Example Submissions</h2>
+        <button class="modal-close" type="button" data-modal-close aria-label="Close">×</button>
+      </div>
+
+      <div class="modal-body">
+        <div class="example-card">
+          <div class="example-top">
+            <div class="example-badge"><i class="bi bi-pencil-square"></i></div>
+            <div>
+              <h3>BAI Writer</h3>
+              <p class="example-meta"><strong>Data sensitivity:</strong> Internal (user-provided text)</p>
+            </div>
+          </div>
+          <p><strong>Purpose:</strong> Drafts clear summaries, memos, and email responses from bullet points staff provide.</p>
+          <p><strong>Users:</strong> Administrative staff</p>
+          <p><strong>Top tasks:</strong></p>
+          <ul>
+            <li>Turn notes into a clean memo format</li>
+            <li>Rewrite content for clarity and tone</li>
+            <li>Create response templates</li>
+          </ul>
+          <p><strong>Sample prompt:</strong> “Turn these bullet points into a 1-page memo for my manager. Use a professional tone.”</p>
+        </div>
+
+        <div class="example-card">
+          <div class="example-top">
+            <div class="example-badge"><i class="bi bi-clipboard-check"></i></div>
+            <div>
+              <h3>Field Inspection Assistant</h3>
+              <p class="example-meta"><strong>Data sensitivity:</strong> Internal / Confidential (depends on content)</p>
+            </div>
+          </div>
+          <p><strong>Purpose:</strong> Converts inspection notes into a structured report with consistent sections and follow-ups.</p>
+          <p><strong>Users:</strong> Operations / inspection staff</p>
+          <p><strong>Top tasks:</strong></p>
+          <ul>
+            <li>Format notes into a standardized inspection report</li>
+            <li>Extract action items and due dates</li>
+            <li>Create a follow-up checklist</li>
+          </ul>
+          <p><strong>Sample prompt:</strong> “Here are my inspection notes—format as a report and list recommended next steps.”</p>
+        </div>
+
+        <div class="example-card">
+          <div class="example-top">
+            <div class="example-badge"><i class="bi bi-file-earmark-text"></i></div>
+            <div>
+              <h3>RFP Guide</h3>
+              <p class="example-meta"><strong>Data sensitivity:</strong> Public / Internal (draft documents)</p>
+            </div>
+          </div>
+          <p><strong>Purpose:</strong> Helps staff outline RFP sections, required language, and evaluation criteria templates.</p>
+          <p><strong>Users:</strong> Guidance / procurement support</p>
+          <p><strong>Top tasks:</strong></p>
+          <ul>
+            <li>Generate an RFP outline aligned to common County structure</li>
+            <li>Suggest evaluation criteria categories</li>
+            <li>Provide reusable prompt templates for consistent drafting</li>
+          </ul>
+          <p><strong>Sample prompt:</strong> “Create an RFP outline for [service] with sections and evaluation criteria.”</p>
+        </div>
+
+        <p class="modal-footnote">
+          <i class="bi bi-info-circle"></i>
+          Examples are for guidance only. Submissions are reviewed by ITD before publication.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      function openModal(id) {
+        const overlay = document.getElementById(id);
+        if (!overlay) return;
+
+        overlay.classList.add("is-open");
+        overlay.setAttribute("aria-hidden", "false");
+        document.body.classList.add("modal-open");
+
+        const closeBtn = overlay.querySelector("[data-modal-close]");
+        if (closeBtn) closeBtn.focus();
+      }
+
+      function closeModal(overlay) {
+        overlay.classList.remove("is-open");
+        overlay.setAttribute("aria-hidden", "true");
+        document.body.classList.remove("modal-open");
+      }
+
+      // Open buttons
+      document.querySelectorAll("[data-modal-open]").forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          e.preventDefault();
+          openModal(btn.getAttribute("data-modal-open"));
+        });
+      });
+
+      // Close buttons + click outside modal
+      document.querySelectorAll(".modal-overlay").forEach((overlay) => {
+        overlay.addEventListener("click", (e) => {
+          if (e.target === overlay) closeModal(overlay);
+        });
+
+        overlay.querySelectorAll("[data-modal-close]").forEach((btn) => {
+          btn.addEventListener("click", () => closeModal(overlay));
+        });
+      });
+
+      // ESC key closes any open modal
+      document.addEventListener("keydown", (e) => {
+        if (e.key !== "Escape") return;
+        const openOverlay = document.querySelector(".modal-overlay.is-open");
+        if (openOverlay) closeModal(openOverlay);
+      });
+    })();
+  </script>
+
+</body>
+</html>
