@@ -6,6 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="styles.css" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet" />
+
+  <!-- County Assistant -->
+  <script defer src="assistant.js"></script>
 </head>
 
 <body>
@@ -13,7 +16,7 @@
   <div class="topbar-inner">
     <div class="brand">
       <img src="CAO_White-Alternative-logo.png" alt="San Bernardino County" class="county-logo" />
-      <strong class="brand-title">AI App Store</strong>
+      <strong class="brand-title">County AI App Store</strong>
     </div>
 
     <nav class="nav">
@@ -139,6 +142,10 @@
 </main>
 
 <div id="close" class="target-close"></div>
+
+<!-- ===========================
+     Drawers (your existing code)
+=========================== -->
 
 <section id="agent-bai-assist" class="drawer-css" aria-labelledby="bai-title">
   <a class="drawer-overlay-css" href="#close" aria-label="Close"></a>
@@ -468,10 +475,9 @@
       </div>
 
       <div class="drawer-actions">
-      <a class="btn btn-primary" href="https://www.youtube.com/@SBCountyPIO" target="_blank" rel="noopener noreferrer">
-       <i class="bi bi-play-circle"></i> Watch
-          </a>
-
+        <a class="btn btn-primary" href="https://www.youtube.com/@SBCountyPIO" target="_blank" rel="noopener noreferrer">
+          <i class="bi bi-play-circle"></i> Watch
+        </a>
         <a class="btn btn-ghost" href="#close"><i class="bi bi-x-circle"></i> Close</a>
       </div>
 
@@ -512,9 +518,8 @@
 
       <div class="drawer-actions">
         <a class="btn btn-primary" href="https://www.youtube.com/@SBCountyPIO" target="_blank" rel="noopener noreferrer">
-        <i class="bi bi-play-circle"></i> Watch
-          </a>
-
+          <i class="bi bi-play-circle"></i> Watch
+        </a>
         <a class="btn btn-ghost" href="#close"><i class="bi bi-x-circle"></i> Close</a>
       </div>
 
@@ -547,7 +552,6 @@
         <a class="btn btn-primary" href="https://www.youtube.com/@SBCountyPIO" target="_blank" rel="noopener noreferrer">
           <i class="bi bi-play-circle"></i> Watch
         </a>
-
         <a class="btn btn-ghost" href="#close"><i class="bi bi-x-circle"></i> Close</a>
       </div>
 
@@ -577,10 +581,9 @@
       </div>
 
       <div class="drawer-actions">
-                <a class="btn btn-primary" href="https://www.youtube.com/@SBCountyPIO" target="_blank" rel="noopener noreferrer">
-            <i class="bi bi-play-circle"></i> Watch
-          </a>
-
+        <a class="btn btn-primary" href="https://www.youtube.com/@SBCountyPIO" target="_blank" rel="noopener noreferrer">
+          <i class="bi bi-play-circle"></i> Watch
+        </a>
         <a class="btn btn-ghost" href="#close"><i class="bi bi-x-circle"></i> Close</a>
       </div>
 
@@ -617,7 +620,6 @@
         <a class="btn btn-primary" href="https://www.youtube.com/@SBCountyPIO" target="_blank" rel="noopener noreferrer">
           <i class="bi bi-play-circle"></i> Watch
         </a>
-
         <a class="btn btn-ghost" href="#close"><i class="bi bi-x-circle"></i> Close</a>
       </div>
 
@@ -626,9 +628,59 @@
   </aside>
 </section>
 
+<!-- ===========================
+     County Assistant UI
+=========================== -->
+<button class="ca-launcher" id="caLauncher" aria-label="Open County Assistant">
+  <img src="assistant-logo.png" alt="County Assistant" class="ca-logo" />
+</button>
+
+
+<section class="ca-panel" id="caPanel" role="dialog" aria-label="County Assistant">
+  <header class="ca-head">
+    <div class="ca-title">
+     <img src="assistant-logo.png" alt="" class="ca-logo-small" />
+      <div>
+        <div class="ca-name">County Assistant</div>
+        <div class="ca-status" id="caStatus">Ready • Voice on</div>
+      </div>
+    </div>
+
+    <div class="ca-actions">
+      <button class="ca-iconbtn" id="caVoiceBtn" title="Toggle voice" aria-label="Toggle voice">
+        <i class="bi bi-volume-up"></i>
+      </button>
+      <button class="ca-iconbtn" id="caReplayBtn" title="Replay" aria-label="Replay">
+        <i class="bi bi-arrow-repeat"></i>
+      </button>
+      <button class="ca-iconbtn" id="caCloseBtn" title="Close" aria-label="Close">
+        <i class="bi bi-x-lg"></i>
+      </button>
+    </div>
+  </header>
+
+  <div class="ca-body" id="caLog" aria-live="polite"></div>
+
+<footer class="ca-footer">
+  <div class="ca-chips" id="caChips"></div>
+
+  <!-- NEW: chat input -->
+  <form class="ca-compose" id="caCompose" autocomplete="off">
+    <input
+      class="ca-input"
+      id="caInput"
+      type="text"
+      placeholder="Type a question… (e.g., “What does BAI Assist do?”)"
+      aria-label="Message County Assistant"
+    />
+    <button class="ca-send" id="caSendBtn" type="submit" aria-label="Send message">
+      <i class="bi bi-send-fill"></i>
+    </button>
+  </form>
+
+  <div class="ca-hint">Tip: Ask a question or click a button — I’ll explain, not open anything.</div>
+</footer>
+</section>
 
 </body>
 </html>
-
-
-

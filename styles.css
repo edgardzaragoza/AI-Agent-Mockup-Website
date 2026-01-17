@@ -31,21 +31,25 @@ body{
 }
 
 .topbar-inner{
-  width:min(1160px,calc(100% - 32px));
-  margin:0 auto;
+  width: 100%;
+  margin: 0;              /* stop centering */
+  padding: 0 24px;        /* nice spacing from edges */
   display:flex;
   align-items:center;
-  gap:18px;
+  justify-content:space-between;
 }
+
+
 
 .brand{
   display:flex;
   align-items:center;
-  gap:14px;
+  gap:50px;
+  margin-right:auto;
 }
 
 .county-logo{
-  height:74px;
+  height:60px;
   width:auto;
   display:block;
 }
@@ -1533,3 +1537,422 @@ body{
   }
 }
 
+
+/* =========================================================
+   County Assistant — REQUIRED (paste at VERY END of styles.css)
+========================================================= */
+
+/* Launcher button (floating logo) */
+.ca-launcher{
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  width: 200px;
+  height: 150px;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  z-index: 9999;
+}
+
+.ca-launcher .ca-logo{
+  width: 110px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 16px 38px rgba(0,0,0,.45));
+  pointer-events: none;
+}
+
+/* Panel container */
+.ca-panel{
+  position: fixed;
+  right: 18px;
+  bottom: 170px; /* leaves room for the big logo */
+  width: min(420px, calc(100vw - 36px));
+  height: 520px;
+
+  border-radius: 22px;
+  border: 1px solid rgba(255,255,255,.22);
+  background: linear-gradient(180deg, rgba(21,58,99,.92), rgba(10,25,41,.88));
+  box-shadow: 0 24px 60px rgba(10,25,41,.35);
+  backdrop-filter: blur(18px);
+  overflow: hidden;
+  z-index: 9999;
+
+  display: flex;
+  flex-direction: column;
+
+  /* hidden by default */
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(14px);
+  transition: opacity .18s cubic-bezier(0.16,1,0.3,1),
+              transform .18s cubic-bezier(0.16,1,0.3,1),
+              visibility 0s linear .18s;
+}
+
+.ca-panel.is-open{
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+  transition: opacity .18s cubic-bezier(0.16,1,0.3,1),
+              transform .18s cubic-bezier(0.16,1,0.3,1);
+}
+
+/* Header */
+.ca-head{
+  flex: 0 0 auto;
+  padding: 12px 12px 10px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  background: rgba(10,25,41,.42);
+  border-bottom: 1px solid rgba(255,255,255,.14);
+}
+
+.ca-title{ display:flex; gap:10px; align-items:center; }
+
+.ca-logo-small{
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 10px rgba(0,0,0,.35));
+}
+
+.ca-name{ font-weight: 950; color:#fff; font-size: 14px; }
+.ca-status{ font-weight: 850; color: rgba(255,255,255,.78); font-size: 12px; }
+
+.ca-actions{ display:flex; gap:8px; }
+
+.ca-iconbtn{
+  width: 36px;
+  height: 36px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,.18);
+  background: rgba(255,255,255,.10);
+  color: #fff;
+  cursor: pointer;
+  display:grid;
+  place-items:center;
+}
+
+/* Body (message log) */
+.ca-body{
+  flex: 1 1 auto;
+  min-height: 0; /* IMPORTANT for scroll */
+  padding: 12px;
+  overflow: auto;
+}
+
+.ca-msg{
+  border: 1px solid rgba(255,255,255,.18);
+  background: rgba(255,255,255,.18);
+  border-radius: 18px;
+  padding: 12px;
+  color: rgba(255,255,255,.96);
+  line-height: 1.35;
+  font-weight: 800;
+  font-size: 14px;
+  box-shadow: 0 10px 26px rgba(10,25,41,.18);
+}
+
+.ca-msg + .ca-msg{ margin-top: 10px; }
+
+/* Footer (buttons/chips) */
+.ca-footer{
+  flex: 0 0 auto;
+  padding: 10px 10px 12px;
+  border-top: 1px solid rgba(255,255,255,.14);
+  background: rgba(10,25,41,.42);
+}
+
+.ca-chips{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+
+.ca-chip{
+  padding: 8px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.18);
+  background: rgba(255,255,255,.12);
+  color:#fff;
+  font-weight: 900;
+  font-size: 12px;
+  cursor:pointer;
+}
+
+.ca-hint{
+  margin-top: 8px;
+  font-size: 12px;
+  font-weight: 850;
+  color: rgba(255,255,255,.75);
+}
+
+/* Optional highlight */
+.ca-highlight{
+  outline: 3px solid rgba(242,178,0,.55);
+  box-shadow: 0 18px 48px rgba(242,178,0,.18);
+}
+
+/* Mobile */
+@media (max-width:520px){
+  .ca-launcher{ right: 14px; bottom: 14px; width: 110px; height: 110px; }
+  .ca-launcher .ca-logo{ width: 88px; }
+  .ca-panel{ right: 12px; bottom: 140px; }
+}
+
+/* =========================================================
+   County Assistant — ALWAYS-VISIBLE Speech Bubble
+   Paste at VERY END of styles.css
+========================================================= */
+
+.ca-launcher{
+  /* keep clickable */
+  position: fixed;
+}
+
+/* Bubble container (always visible) */
+.ca-launcher.ca-has-bubble .ca-bubble{
+  position: absolute;
+  right: 160px;               /* bubble sits to the left of logo */
+  bottom: 40px;              /* align to logo height */
+  width: 260px;
+  max-width: 62vw;
+
+  padding: 12px 14px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,.22);
+
+  background: linear-gradient(180deg, rgba(21,58,99,.92), rgba(10,25,41,.84));
+  color: rgba(255,255,255,.96);
+  box-shadow: 0 18px 44px rgba(10,25,41,.30);
+
+  backdrop-filter: blur(14px);
+
+  transform-origin: 100% 100%;
+  transform: translateY(0);
+  opacity: 1;
+
+  pointer-events: none; /* click still hits the logo button */
+}
+
+/* Little tail */
+.ca-launcher.ca-has-bubble .ca-bubble::after{
+  content:"";
+  position:absolute;
+  right: -10px;
+  bottom: 22px;
+  width: 18px;
+  height: 18px;
+  background: linear-gradient(180deg, rgba(21,58,99,.92), rgba(10,25,41,.84));
+  border-right: 1px solid rgba(255,255,255,.18);
+  border-bottom: 1px solid rgba(255,255,255,.18);
+  transform: rotate(-45deg);
+  border-radius: 4px;
+}
+
+/* Bubble text */
+.ca-bubble-text{
+  font-weight: 950;
+  font-size: 13px;
+  line-height: 1.25;
+  letter-spacing: .1px;
+}
+
+.ca-bubble-sub{
+  margin-top: 6px;
+  font-weight: 850;
+  font-size: 12px;
+  color: rgba(255,255,255,.72);
+}
+
+/* Hover = stronger “chatbot” signal */
+.ca-launcher.ca-hover .ca-bubble{
+  box-shadow: 0 22px 58px rgba(10,25,41,.38);
+  border-color: rgba(242,178,0,.40);
+}
+
+/* Open state = slightly brighter */
+.ca-launcher.ca-open .ca-bubble{
+  border-color: rgba(242,178,0,.48);
+}
+
+/* Pop animation when message changes */
+.ca-bubble.is-pop{
+  animation: caBubblePop .26s cubic-bezier(0.16,1,0.3,1);
+}
+
+@keyframes caBubblePop{
+  0%{ transform: scale(.98) translateY(1px); }
+  100%{ transform: scale(1) translateY(0); }
+}
+
+/* Mobile placement */
+@media (max-width:520px){
+  .ca-launcher.ca-has-bubble .ca-bubble{
+    right: 120px;
+    bottom: 86px;
+    width: 220px;
+  }
+}
+
+/* =========================================================
+   County Assistant — Subtle Breathing Bounce (Option A)
+========================================================= */
+
+/* Idle breathing bounce (always on) */
+.ca-launcher{
+  animation: caBreath 5.2s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* Slightly stronger response on hover */
+.ca-launcher.ca-hover{
+  animation: caHoverBreath 2.4s ease-in-out infinite;
+}
+
+/* Calm, premium idle motion */
+@keyframes caBreath{
+  0%{
+    transform: translateY(0) scale(1);
+  }
+  50%{
+    transform: translateY(-6px) scale(1.015);
+  }
+  100%{
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* More alert when hovered */
+@keyframes caHoverBreath{
+  0%{
+    transform: translateY(0) scale(1);
+  }
+  50%{
+    transform: translateY(-10px) scale(1.03);
+  }
+  100%{
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* When panel is open, calm it down (focused state) */
+.ca-launcher.ca-open{
+  animation: caFocusedStill 6s ease-in-out infinite;
+}
+
+@keyframes caFocusedStill{
+  0%,100%{
+    transform: translateY(0) scale(1);
+  }
+  50%{
+    transform: translateY(-3px) scale(1.01);
+  }
+}
+
+/* ===============================
+   County Assistant — Chat Box Add-on
+   Paste at VERY END of styles.css
+================================ */
+
+/* user vs bot bubbles */
+.ca-msg.ca-msg-user{
+  margin-left: auto;
+  background: rgba(255,255,255,.10);
+  border: 1px solid rgba(255,255,255,.14);
+  max-width: 85%;
+}
+
+.ca-msg.ca-msg-bot{
+  margin-right: auto;
+  max-width: 92%;
+}
+
+/* typing indicator */
+.ca-typing{
+  opacity: .85;
+  font-style: italic;
+}
+
+/* composer (input + send) */
+.ca-compose{
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.ca-input{
+  flex: 1 1 auto;
+  height: 42px;
+  padding: 0 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.18);
+  background: rgba(255,255,255,.10);
+  color: rgba(255,255,255,.95);
+  outline: none;
+}
+
+.ca-input::placeholder{
+  color: rgba(255,255,255,.65);
+}
+
+.ca-input:focus{
+  border-color: rgba(242,178,0,.55);
+  box-shadow: 0 0 0 3px rgba(242,178,0,.18);
+}
+
+.ca-send{
+  width: 46px;
+  height: 42px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.18);
+  background: rgba(255,255,255,.12);
+  color: #fff;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+
+.ca-send:hover{
+  background: rgba(255,255,255,.18);
+}
+
+.ca-send:active{
+  transform: scale(.98);
+}
+
+/* =========================================
+   County Assistant Logo — Depth + Glow
+========================================= */
+
+.ca-launcher .ca-logo{
+  filter:
+    drop-shadow(0 8px 18px rgba(0,0,0,.35))
+    drop-shadow(0 0 22px rgba(21,58,99,.45));
+  transition: filter .25s cubic-bezier(0.16,1,0.3,1),
+              transform .25s cubic-bezier(0.16,1,0.3,1);
+}
+
+/* Hover = stronger presence */
+.ca-launcher.ca-hover .ca-logo{
+  filter:
+    drop-shadow(0 12px 26px rgba(0,0,0,.45))
+    drop-shadow(0 0 30px rgba(242,178,0,.55));
+}
+
+/* Panel open = calmer glow */
+.ca-launcher.ca-open .ca-logo{
+  filter:
+    drop-shadow(0 6px 14px rgba(0,0,0,.30))
+    drop-shadow(0 0 16px rgba(21,58,99,.35));
+}
