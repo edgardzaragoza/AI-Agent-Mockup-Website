@@ -1,12 +1,4 @@
-/* =========================================================
-   County Assistant (Guided + Chat Box + Voice optional)
-   - User can type messages (mock replies, no real AI API)
-   - Still has buttons/chips for quick topics
-   - ALWAYS-VISIBLE speech bubble (makes it feel alive)
-========================================================= */
-
 (() => {
-  // Elements
   const launcher = document.getElementById("caLauncher");
   const panel = document.getElementById("caPanel");
   const log = document.getElementById("caLog");
@@ -17,7 +9,6 @@
   const replayBtn = document.getElementById("caReplayBtn");
   const closeBtn = document.getElementById("caCloseBtn");
 
-  // NEW: composer elements (chat input)
   const compose = document.getElementById("caCompose");
   const input = document.getElementById("caInput");
   const sendBtn = document.getElementById("caSendBtn");
@@ -27,14 +18,10 @@
     return;
   }
 
-  // -------------------------
-  // State
-  // -------------------------
   let voiceEnabled = true;
   let lastSpoken = "";
   let selectedVoice = null;
 
-  // Speech bubble rotation
   let bubbleTimer = null;
   let bubbleIndex = 0;
 
@@ -45,9 +32,6 @@
     "Try typing a question."
   ];
 
-  // -------------------------
-  // Voice (Web Speech API)
-  // -------------------------
   function getVoicesSafe() {
     try {
       return window.speechSynthesis ? speechSynthesis.getVoices() : [];
@@ -89,7 +73,7 @@
 
     const u = new SpeechSynthesisUtterance(text);
 
-    // Extroverted / pitchy
+
     u.rate = 1.12;
     u.pitch = 1.32;
     u.volume = 1.0;
@@ -111,9 +95,7 @@
     selectedVoice = pickVoice();
   }
 
-  // -------------------------
-  // UI helpers
-  // -------------------------
+
   function clearLog() {
     log.innerHTML = "";
   }
@@ -150,7 +132,7 @@
   function openPanel() {
     panel.classList.add("is-open");
     panel.setAttribute("aria-hidden", "false");
-    // focus the input when panel opens (if it exists)
+  
     setTimeout(() => input?.focus(), 50);
   }
 
@@ -166,56 +148,16 @@
     else openPanel();
   }
 
-  // -------------------------
-  // ALWAYS-VISIBLE speech bubble (injected)
-  // -------------------------
   function ensureBubble() {
-    let bubble = launcher.querySelector(".ca-bubble");
-    if (bubble) return bubble;
-
-    bubble = document.createElement("div");
-    bubble.className = "ca-bubble";
-    bubble.setAttribute("role", "note");
-    bubble.setAttribute("aria-label", "County Assistant tip");
-
-    const text = document.createElement("div");
-    text.className = "ca-bubble-text";
-    text.textContent = bubbleLines[0];
-
-    const sub = document.createElement("div");
-    sub.className = "ca-bubble-sub";
-    sub.textContent = "Click to open";
-
-    bubble.appendChild(text);
-    bubble.appendChild(sub);
-
-    launcher.appendChild(bubble);
-    launcher.classList.add("ca-has-bubble");
-
-    return bubble;
+    return null;
   }
 
   function setBubbleLine(line, subline = "Click to open") {
-    const bubble = ensureBubble();
-    const text = bubble.querySelector(".ca-bubble-text");
-    const sub = bubble.querySelector(".ca-bubble-sub");
-
-    bubble.classList.remove("is-pop");
-    void bubble.offsetWidth;
-    bubble.classList.add("is-pop");
-
-    if (text) text.textContent = line;
-    if (sub) sub.textContent = subline;
+    // bubble disabled — new button design handles this visually
   }
 
   function startBubbleRotation() {
-    ensureBubble();
-    if (bubbleTimer) return;
-
-    bubbleTimer = setInterval(() => {
-      bubbleIndex = (bubbleIndex + 1) % bubbleLines.length;
-      setBubbleLine(bubbleLines[bubbleIndex], "Click to open");
-    }, 3800);
+    // bubble disabled
   }
 
   function stopBubbleRotation() {
@@ -236,9 +178,7 @@
     setBubbleLine(bubbleLines[bubbleIndex], "Click to open");
   }
 
-  // -------------------------
-  // Content (buttons + chat replies)
-  // -------------------------
+
   function intro() {
     clearLog();
 
@@ -316,13 +256,13 @@
     setBubbleLine("Submit an Agent", "Propose • review • approve");
   }
 
-  // --- Chat brain (mock logic) ---
+
   function replyFor(textRaw) {
     const text = (textRaw || "").trim().toLowerCase();
 
     if (!text) return "Say that again? You can ask about BAI Assist, Procurement, Grants, Training, Privacy, or submitting an agent.";
 
-    // Greetings / help
+  
     if (/(^|\b)(hi|hello|hey|good morning|good afternoon|good evening)(\b|$)/.test(text)) {
       return "Hi! What can I help with — an agent overview, training videos, privacy rules, or submitting an agent?";
     }
@@ -330,7 +270,7 @@
       return "I’m a guided helper for this mockup. Ask about an agent (BAI Assist, Procurement, Grants), training videos, privacy rules, or how to submit a new agent.";
     }
 
-    // Topics
+
     if (text.includes("bai") || text.includes("writer") || text.includes("email") || text.includes("memo") || text.includes("summary")) {
       return "BAI Assist is your writing helper: emails, memos, summaries, and internal updates. Best practice: paste non-sensitive context, request tone/length, then review before sending.";
     }
@@ -350,14 +290,14 @@
       return "Submitting an agent is how departments propose new tools. In the real build, IT/security would review for data handling, access controls, and compliance before publishing it to staff.";
     }
 
-    // Default
+
     return "I can help with: BAI Assist, Procurement, Federal Grants, Training Videos, Privacy Rules, or Submit an Agent. Which one do you want to hear about?";
   }
 
   function botRespond(userText) {
     const typing = addTyping();
 
-    // slight delay makes it feel real
+
     setTimeout(() => {
       typing.remove();
       const answer = replyFor(userText);
@@ -367,9 +307,6 @@
     }, 450);
   }
 
-  // -------------------------
-  // Events
-  // -------------------------
   ensureBubble();
   startBubbleRotation();
 
@@ -408,7 +345,6 @@
     setBubbleLine(voiceEnabled ? "Voice is ON" : "Voice is OFF", "Type or tap buttons");
   });
 
-  // NEW: sending typed chat
   compose?.addEventListener("submit", (e) => {
     e.preventDefault();
     if (!input) return;
@@ -416,7 +352,7 @@
     const text = input.value.trim();
     if (!text) return;
 
-    // ensure panel open
+
     if (!panel.classList.contains("is-open")) {
       openPanel();
       onPanelOpened();
@@ -428,7 +364,7 @@
     botRespond(text);
   });
 
-  // Optional: Ctrl+Enter sends too (nice for longer typing later)
+
   input?.addEventListener("keydown", (e) => {
     if (e.key === "Enter" && (e.ctrlKey || e.metaKey)) {
       e.preventDefault();
@@ -443,6 +379,6 @@
     }
   });
 
-  // Start panel hidden
+  
   panel.setAttribute("aria-hidden", "true");
 })();
